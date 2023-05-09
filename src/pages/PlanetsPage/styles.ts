@@ -7,9 +7,18 @@ export const PlanetsWrapper = styled.div`
   margin: 0 1rem;
   justify-items: center;
 `
-
 export const PageName = styled.h2`
   display: flex;
   justify-content: center;
   margin-bottom: 3rem;
+`
+export const PlanetElement = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #FFE300;
+  border-radius: 0.5rem;
+  h2 {
+    align-self: center;
+  }
+
 `

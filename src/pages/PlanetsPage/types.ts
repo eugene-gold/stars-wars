@@ -8,7 +8,7 @@ export type PlanetDataType = {
     climate?: string;
     terrain?: string;
     surface_water?: string;
-    residents?: string[];
+    residents: string[];
     films?: string[];
     url?: string;
     created: string;

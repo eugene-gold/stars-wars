@@ -7,6 +7,7 @@ export const usePlanetsStore = create<fetchDataWithPagination<PlanetDataType>>((
     data: [],
     nextPage: null,
     fetchData: async () => {
+
         set({isLoading: true })
         try {
             const response = await fetch ('https://swapi.dev/api/planets')
@@ -20,6 +21,16 @@ export const usePlanetsStore = create<fetchDataWithPagination<PlanetDataType>>((
             set({isLoading: false })
 
         }
+
+        const next = get().nextPage;
+
+        if(next) {
+            try {
+                await get().fetchNextPageData()
+            } catch (e : any) {
+                console.log(e)
+            }
+        }
     },
     fetchNextPageData: async () => {
         const next = get().nextPage;
@@ -29,6 +40,8 @@ export const usePlanetsStore = create<fetchDataWithPagination<PlanetDataType>>((
         try {
             const response = await fetch(`${next}`)
             const data = await response.json()
+            console.log(data)
+
             set({data: [...get().data, ...data.results], nextPage: data.next })
             await get().fetchNextPageData()
         } catch (e){

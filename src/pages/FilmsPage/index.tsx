@@ -4,7 +4,7 @@ import { Loader } from '../../components/Loader';
 import {FilmsWrapper} from "./styles";
 import {Link} from "react-router-dom";
 import {fetchDataType} from "../types";
-import {useFilmsStore} from "../../store/useFilmsstore";
+import {useFilmsStore} from "../../store/useFilmsStore";
 
 export const Films = () => {
   const { isLoading, data  } = useFilmsStore<fetchDataType<FilmDataType>>

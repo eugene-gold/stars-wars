@@ -18,21 +18,32 @@ export const usePeopleStore = create<PeopleStoreType<PeopleDataType>>((set, get)
         } finally {
             set({ isLoading: false })
         }
+
+        const next = get().nextPage;
+
+        if(next) {
+            try {
+                await get().fetchNextPageData()
+
+            } catch (e : any) {
+                console.log(e)
+            }
+        }
     },
     fetchNextPageData: async () => {
-        set({ isLoading: true })
+        const next = get().nextPage;
+        if(!next) {
+            return
+        }
         try {
-            const next = get().nextPage
-            if(next) {
-                const response = await fetch(`${next}`)
-                const data = await response.json()
-                console.log(data)
-                set({ data: [...get().data, ...data.results] , error: null, nextPage: data.next,  prevPage: data.previous })
-            }
-        } catch (error: any) {
-            set({ error: error.message })
-        } finally {
-            set({ isLoading: false })
+            const response = await fetch(`${next}`)
+            const data = await response.json()
+            console.log(data)
+
+            set({data: [...get().data, ...data.results], nextPage: data.next })
+            await get().fetchNextPageData()
+        } catch (e){
+            console.log(e)
         }
     },
     fetchPrevPage: async () => {

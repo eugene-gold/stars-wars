@@ -1,7 +1,7 @@
 import React from 'react';
 import {PlanetDataType} from './types';
 import { Loader } from '../../components/Loader';
-import {PlanetsWrapper, PageName} from "./styles";
+import {PlanetsWrapper, PageName, PlanetElement} from "./styles";
 import {Link} from "react-router-dom";
 import {fetchDataWithPagination} from "../types";
 import {usePlanetsStore} from "../../store/usePlanetsStore";
@@ -10,7 +10,6 @@ export const Planets = () => {
     const { isLoading,
         data,
         fetchData,
-        nextPage,
         fetchNextPageData } = usePlanetsStore<fetchDataWithPagination<PlanetDataType>>
     ((state) =>
         ({ isLoading: state.isLoading,
@@ -30,17 +29,19 @@ export const Planets = () => {
                         <button onClick={fetchNextPageData}>Get All Planets</button>
                         <PlanetsWrapper>
                             {data.map((planet: PlanetDataType) => (
-                                <div key={planet.name}>
+                                <PlanetElement key={planet.name}>
                                     <Link to={`/planet/${planet.name}`}
                                           state={{planet: planet}}
-                                    ><h3>{planet.name}</h3></Link>
-
+                                    >
+                                    <h2>{planet.name}</h2>
                                     <div>
-                                        <h2>Climate : {planet.climate}</h2>
-                                        <span>Population: {planet.population}</span>
-                                        <span>Diameter: {planet.diameter}</span>
+                                        <p>Climate : {planet.climate}</p>
+                                        <p>Population: {planet.population}</p>
+                                        <p>Diameter: {planet.diameter}</p>
+                                        <p>Terrain: {planet.terrain}</p>
                                     </div>
-                                </div>
+                                    </Link>
+                                </PlanetElement>
                             ))}
                         </PlanetsWrapper>
                     </div>
