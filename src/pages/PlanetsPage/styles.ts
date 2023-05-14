@@ -14,11 +14,13 @@ export const PageName = styled.h2`
 `
 export const PlanetElement = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   border: 2px solid #FFE300;
   border-radius: 0.5rem;
+  
   h2 {
-    align-self: center;
+    text-align: center;
   }
 
 `

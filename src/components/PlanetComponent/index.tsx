@@ -1,43 +1,29 @@
 import {PlanetWrapper} from "./styles";
 import {FC, useState} from "react";
-import {PlanetDataType} from "../../pages/PlanetsPage/types";
-import {useLocation} from "react-router";
+import { useNavigate, useParams} from "react-router";
 import {usePeopleStore} from "../../store/usePeopleStore";
 import {PeopleDataType} from "../../pages/PeoplePage/types";
-
-const resid = (residents: string[], peopleData: any[]) : PeopleDataType[]=> {
-    let arr: PeopleDataType[] = []
-
-    if(residents?.length === 0) {
-        return arr
-    }
-
-    for(let i = 0; i < residents?.length; i++) {
-        peopleData.forEach( people => {
-            if(people.url === residents[i]) {
-                arr.push(people)
-            }
-        })
-    }
-
-    return arr
-
-}
-
+import {Link} from "react-router-dom";
+import {getItemsArray} from "../../helpers/getItemsArray";
+import {usePlanetsStore} from "../../store/usePlanetsStore";
 
 export const PlanetComponent: FC = () => {
-    const { state } = useLocation()
-    const { name, climate, diameter, population, residents, gravity  }: PlanetDataType = state.planet
-    const peopleData = usePeopleStore.getState().data
-    const people =  resid(residents, peopleData)
+    const navigate = useNavigate()
+    const goBack = () => navigate(-1)
+    const params = useParams()
+    const planet = usePlanetsStore.getState().data.find((item) => item.name === params.id)
 
-    const [peoplArr, setPeopArr] = useState<PeopleDataType[]>(people)
+    const peopleData = usePeopleStore.getState().data
+
+    const planetResidents = getItemsArray(planet?.residents, peopleData)
+
+    const [peoplArr, setPeopArr] = useState<PeopleDataType[]>(planetResidents)
 
     const filtredPeople = (param: string) => {
         if (param === 'all') {
-            setPeopArr(people)
+            setPeopArr(planetResidents)
         } else {
-            setPeopArr([...people].filter(peop =>  peop.gender === param))
+            setPeopArr([...planetResidents].filter(item =>  item.gender === param))
         }
     }
 
@@ -47,20 +33,21 @@ export const PlanetComponent: FC = () => {
             <button onClick={()=>filtredPeople('male')}>Male</button>
             <button onClick={()=>filtredPeople('female')}>Female</button>
             <button onClick={()=>filtredPeople('none')}>None</button>
-            <h2>{name}</h2>
-            <h3>Climate: {climate}</h3>
-            <h5>Diameter: {diameter}</h5>
-            <p>Population: {population}</p>
-            <p>Gravity: {gravity}</p>
+            <button onClick={goBack}>Back</button>
+            <h2>{planet?.name}</h2>
+            <h3>Climate: {planet?.climate}</h3>
+            <h5>Diameter: {planet?.diameter}</h5>
+            <p>Population: {planet?.population}</p>
+            <p>Gravity: {planet?.gravity}</p>
             <div>Residents:
             { peoplArr.length > 0 ?
                 peoplArr.map(man =>
                     <div key={man.url}>
-                    <p >Name: {man.name}</p>
-                    <p>Gender: {man.gender}</p>
-                    <p>Birth: {man.birth_year}</p>
-                    <p>Height: {man.height}</p>
-                    <p>Weight: {man.mass}</p>
+                        <Link key={man.name} to={`/people/${man.name}`}><div>Name: {man.name}</div></Link>
+                        <div>Gender: {man.gender}</div>
+                        <div>Birth: {man.birth_year}</div>
+                        <div>Height: {man.height}</div>
+                        <div>Weight: {man.mass}</div>
                     </div>
                 ) : <span> n/a</span>
             }

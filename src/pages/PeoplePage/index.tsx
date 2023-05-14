@@ -5,6 +5,8 @@ import {IndexWrapper, PeoplePageContainer, MenuPanel} from "./styles";
 import {PeopleElement} from "./components/PeopleElement";
 import {PeopleDataType, PeopleStoreType} from "./types";
 import {usePeopleStore} from "../../store/usePeopleStore";
+import {Link} from "react-router-dom";
+
 export const PeoplePage = () => {
 
     const {data,
@@ -31,7 +33,11 @@ export const PeoplePage = () => {
             <button onClick={fetchNextPageData}>More...</button>
         </MenuPanel>
         <IndexWrapper>
-            {isLoading ? <Loader/> : ( data.map((item:any) => <PeopleElement key={item.name} item={item} /> ))}
+            {isLoading ? <Loader/> : ( data.map((item:any) =>
+                <Link key={item.name} to={`/people/${item.name}`} state={{people: item}}>
+                    <PeopleElement key={item.name} item={item} />
+                </Link>
+            ))}
         </IndexWrapper>
     </PeoplePageContainer>
   );

@@ -2,7 +2,7 @@ import {create} from "zustand";
 import {fetchDataType} from "../pages/types";
 import {FilmDataType} from "../pages/FilmsPage/types";
 
-export const useFilmsStore = create<fetchDataType<FilmDataType>>((set, get)=>({
+export const useFilmsStore = create<fetchDataType<FilmDataType>>((set)=>({
     isLoading: false,
     data: [],
     fetchData: async () => {

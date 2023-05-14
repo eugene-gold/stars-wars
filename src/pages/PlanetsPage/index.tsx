@@ -30,7 +30,7 @@ export const Planets = () => {
                         <PlanetsWrapper>
                             {data.map((planet: PlanetDataType) => (
                                 <PlanetElement key={planet.name}>
-                                    <Link to={`/planet/${planet.name}`}
+                                    <Link to={`/planets/${planet.name}`}
                                           state={{planet: planet}}
                                     >
                                     <h2>{planet.name}</h2>

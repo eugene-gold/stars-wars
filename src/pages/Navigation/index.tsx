@@ -9,6 +9,8 @@ export const Navigation = () => {
             <NavLink to={'people'}> People </NavLink>
             <NavLink to={'films'}> Films </NavLink>
             <NavLink to={'planets'}> Planets </NavLink>
+            <NavLink to={'starships'}> Starships </NavLink>
+            <NavLink to={'vehicles'}> Vehicles </NavLink>
         </NavWrapper>
     );
 };

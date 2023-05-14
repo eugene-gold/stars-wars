@@ -11,6 +11,9 @@ import {
 } from "react-router-dom";
 import {Layout} from "../components/Layout/Layout";
 import {PlanetComponent} from "../components/PlanetComponent";
+import {PeopleComponent} from "../components/PeopleComponent";
+import {StarshipsPage} from "./StarshipsPage";
+import {VehiclesPage} from "./VehiclesPage";
 
 
 let router = createBrowserRouter([
@@ -24,7 +27,7 @@ let router = createBrowserRouter([
                 element: <Planets/>,
             },
             {
-                path: "planet/:id",
+                path: "planets/:id",
                 element: <PlanetComponent />,
             },
             {
@@ -38,6 +41,18 @@ let router = createBrowserRouter([
             {
                 path: 'people',
                 element: <PeoplePage/>
+            },
+            {
+                path: '/people/:id',
+                element: <PeopleComponent/>
+            },
+            {
+                path: '/starships',
+                element: <StarshipsPage/>
+            },
+            {
+                path: '/vehicles',
+                element: <VehiclesPage/>
             }
         ]
     },
@@ -46,7 +61,7 @@ let router = createBrowserRouter([
 
 function App() {
   return (
-     <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
+     <RouterProvider router={router} />
   );
 }
 
