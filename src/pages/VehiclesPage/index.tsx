@@ -1,13 +1,11 @@
 import {useVehiclesStore} from "../../store/useVehiclesStore";
+import {Preview} from "../StarshipsPage/ItemsComponent";
 
 export const VehiclesPage = () => {
     const data = useVehiclesStore.getState().data
-    console.log(data)
     return (
-        <div>
-            {data.map(vehicle => (
-                <div key={vehicle.url}>{vehicle.name}</div>
-            ))}
-        </div>
+        <>
+            <Preview props={data}/>
+        </>
     );
 };

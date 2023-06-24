@@ -1,4 +1,3 @@
-import React from 'react';
 import { Logo } from './styles';
 
 export const Loader = () => {

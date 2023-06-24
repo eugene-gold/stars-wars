@@ -1,4 +1,11 @@
 import styled from "@emotion/styled/macro";
+import { ReactComponent as navlogo } from "logo.svg";
+
+export const NavLogo = styled(navlogo)`
+  height: 3rem;
+  margin-right: 2rem;
+  filter: drop-shadow(-9px -3px 2px crimson);
+`;
 
 export const NavWrapper = styled.header`
     display: flex;

@@ -1,4 +1,3 @@
-import React from 'react';
 import '../App.css';
 import { PeoplePage} from "./PeoplePage";
 import {ErrorPage} from "./ErrorPage";

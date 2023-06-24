@@ -1,5 +1,4 @@
-import React from 'react';
-import { Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import {Navigation} from "../../pages/Navigation";
 import {MainWrapper} from "./styles";
 import {usePeopleStore} from "../../store/usePeopleStore";

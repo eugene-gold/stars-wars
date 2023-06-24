@@ -21,7 +21,7 @@ export const PeopleComponent = () => {
             <div>
                 Info
                 <div>Birth at: <span>{person?.birth_year}</span></div>
-                <div>Born in: <Link to={`/planet/${home?.name}`}><span>{home?.name}</span></Link></div>
+                <div>Born in: <Link to={`/planets/${home?.name}`}><span>{home?.name}</span></Link></div>
 
                 <div>Physics:
                     <div>Gender: <span>{person?.gender}</span></div>
