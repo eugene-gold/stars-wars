@@ -4,7 +4,9 @@ import {NavLogo, NavWrapper} from "./styles";
 export const Navigation = () => {
     return (
         <NavWrapper>
-            <NavLogo />
+            <NavLink to={'/'}>
+                <NavLogo/>
+            </NavLink>            
             <NavLink to={'/'}> Home </NavLink>
             <NavLink to={'people'}> People </NavLink>
             <NavLink to={'films'}> Films </NavLink>
