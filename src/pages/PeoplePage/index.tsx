@@ -1,13 +1,22 @@
-import { SearchInput } from '../../components/Input/SearchInput';
+import { InputWithLabel } from '../../components/Input/InputWithLabel';
 import {Loader} from "../../components/Loader";
 import {IndexWrapper, PeoplePageContainer, MenuPanel} from "./styles";
 import {PeopleDataType, PeopleStoreType} from "./types";
 import {usePeopleStore} from "../../store/usePeopleStore";
 import { useStorageState } from 'helpers/useSearchHook';
 import { ItemsList } from 'components/ItemsListComponent';
+import { Button } from 'components/Button';
+import { Slider } from 'components/Slider';
+
+// TODO: пагинацию или убрать или сделать дополнительно отдельно 
+// кнопки удалить
+
 
 export const PeoplePage = () => {
+
     const [searchItem, setSearchItem] = useStorageState( 'search', '')
+
+     
     const {data,
         isLoading,
         fetchData,
@@ -35,11 +44,17 @@ export const PeoplePage = () => {
   return (
     <PeoplePageContainer>
         <MenuPanel>
-            <SearchInput search={searchItem} onSearch={handleSearch} />
-            {/* пагинацию или убрать или сделать дополнительно отдельно */}
-            {/* <button onClick={fetchPrevPage}>Previous</button>
-            <button onClick={fetchData}>Press</button>
-            <button onClick={fetchNextPageData}>More...</button> */}
+            <InputWithLabel
+            id='search'
+            value={searchItem}
+            isFocused
+            onInputChange={handleSearch}>
+                <strong>Search name:&nbsp;</strong> 
+            </InputWithLabel>
+            <Button onClick={fetchPrevPage}>Previous</Button>
+            {/* <button onClick={fetchData}>Press</button> */}
+            {/* <button onClick={fetchNextPageData}>More...</button> */}
+            
         </MenuPanel>
         <IndexWrapper>
             {isLoading ? <Loader/> : <ItemsList list={searchedItems} />}            
