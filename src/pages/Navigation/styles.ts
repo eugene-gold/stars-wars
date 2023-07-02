@@ -1,17 +1,23 @@
 import styled from "@emotion/styled/macro";
 import { ReactComponent as navlogo } from "logo.svg";
+import { ReactComponent as mando } from "mando.svg";
 
-export const NavLogo = styled(navlogo)`
+export const DarkLogo = styled(navlogo)`
   height: 3rem;
   margin-right: 2rem;
   filter: drop-shadow(-9px -3px 2px crimson);
+`;
+
+export const LightLogo = styled(mando)`
+  height: 3rem;
+  margin-right: 2rem;
+  filter: drop-shadow(-9px -3px 2px gold);
 `;
 
 export const NavWrapper = styled.header`
     display: flex;
     width: 100%;
     height: 7rem;
-    background-color: #c8c8c8;
     justify-content: center;
     align-items: center;
     a {
