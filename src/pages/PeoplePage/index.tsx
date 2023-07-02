@@ -6,7 +6,6 @@ import {usePeopleStore} from "../../store/usePeopleStore";
 import { useStorageState } from 'helpers/useSearchHook';
 import { ItemsList } from 'components/ItemsListComponent';
 import { Button } from 'components/Button';
-import { Slider } from 'components/Slider';
 
 // TODO: пагинацию или убрать или сделать дополнительно отдельно 
 // кнопки удалить
@@ -19,8 +18,8 @@ export const PeoplePage = () => {
      
     const {data,
         isLoading,
-        fetchData,
-        fetchNextPageData,
+        // fetchData,
+        // fetchNextPageData,
         fetchPrevPage} =
         usePeopleStore<PeopleStoreType<PeopleDataType>>((state) => ({
         data: state.data,
