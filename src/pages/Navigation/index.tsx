@@ -1,14 +1,15 @@
 import {NavLink} from "react-router-dom";
-import {DarkLogo, LightLogo, NavWrapper} from "./styles";
+import {NavWrapper} from "./styles";
 import { useTheme } from "app/providers/ThemeProvider";
+import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 
 export const Navigation = () => {
 
-    const {theme, toggleTheme} = useTheme()
+    const {theme} = useTheme()
 
     return (
         <NavWrapper className={`nav ${theme}`}>
-            {theme === 'light' ? <LightLogo onClick={toggleTheme}/> : <DarkLogo onClick={toggleTheme}/>}                       
+            <ThemeSwitcher className=""/>                       
             <NavLink to={'/'}> Home </NavLink>
             <NavLink to={'people'}> People </NavLink>
             <NavLink to={'films'}> Films </NavLink>

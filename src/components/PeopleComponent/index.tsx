@@ -1,7 +1,7 @@
 import { useParams} from "react-router";
 import {usePeopleStore} from "../../store/usePeopleStore";
 import {usePlanetsStore} from "../../store/usePlanetsStore";
-import {getItemsArray} from "../../helpers/getItemsArray";
+import {getItemsArray} from "../../shared/lib/getItems/getItemsArray";
 import {useFilmsStore} from "../../store/useFilmsStore";
 import {Link} from "react-router-dom";
 

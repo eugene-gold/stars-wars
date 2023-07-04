@@ -3,9 +3,9 @@ import {Loader} from "../../components/Loader";
 import {IndexWrapper, PeoplePageContainer, MenuPanel} from "./styles";
 import {PeopleDataType, PeopleStoreType} from "./types";
 import {usePeopleStore} from "../../store/usePeopleStore";
-import { useStorageState } from 'helpers/useSearchHook';
 import { ItemsList } from 'components/ItemsListComponent';
-import { Button } from 'components/Button';
+import { useStorageState } from 'app/providers/useSearchHook';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
 
 // TODO: пагинацию или убрать или сделать дополнительно отдельно 
 // кнопки удалить
@@ -14,7 +14,6 @@ import { Button } from 'components/Button';
 export const PeoplePage = () => {
 
     const [searchItem, setSearchItem] = useStorageState( 'search', '')
-
      
     const {data,
         isLoading,
@@ -50,7 +49,8 @@ export const PeoplePage = () => {
             onInputChange={handleSearch}>
                 <strong>Search name:&nbsp;</strong> 
             </InputWithLabel>
-            <Button onClick={fetchPrevPage}>Previous</Button>
+            <Button className="" theme={ThemeButton.CLEAR} onClick={fetchPrevPage}>Previous</Button>
+                        
             {/* <button onClick={fetchData}>Press</button> */}
             {/* <button onClick={fetchNextPageData}>More...</button> */}
             

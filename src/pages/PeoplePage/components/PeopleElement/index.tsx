@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react';
 import {ElementWrapper} from "./styles";
-import {mouseDragCoords} from "../../../../helpers/mouseDragCoords";
+import {mouseDragCoords} from "shared/lib/mouseDraggable/mouseDragCoords";
 import {PeopleDataType} from "../../types";
 import {usePlanetsStore} from "../../../../store/usePlanetsStore";
 

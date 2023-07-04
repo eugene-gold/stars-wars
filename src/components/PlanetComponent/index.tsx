@@ -4,7 +4,7 @@ import { useNavigate, useParams} from "react-router";
 import {usePeopleStore} from "../../store/usePeopleStore";
 import {PeopleDataType} from "../../pages/PeoplePage/types";
 import {Link} from "react-router-dom";
-import {getItemsArray} from "../../helpers/getItemsArray";
+import {getItemsArray} from "../../shared/lib/getItems/getItemsArray";
 import {usePlanetsStore} from "../../store/usePlanetsStore";
 
 export const PlanetComponent: FC = () => {
