@@ -1,17 +1,17 @@
-import { PeoplePage} from "./pages/PeoplePage";
-import {ErrorPage} from "./pages/ErrorPage";
-import {Films} from "./pages/FilmsPage";
-import {FilmComponent} from "./components/FilmComponent";
-import {Planets} from "./pages/PlanetsPage";
+import { PeoplePage} from "../pages/PeoplePage";
+import {ErrorPage} from "../pages/ErrorPage";
+import {Films} from "../pages/FilmsPage";
+import {FilmComponent} from "../components/FilmComponent";
+import {Planets} from "../pages/PlanetsPage";
 import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
-import {Layout} from "./components/Layout/Layout";
-import {PlanetComponent} from "./components/PlanetComponent";
-import {PeopleComponent} from "./components/PeopleComponent";
-import {StarshipsPage} from "./pages/StarshipsPage";
-import {VehiclesPage} from "./pages/VehiclesPage";
+import {Layout} from "../components/Layout/Layout";
+import {PlanetComponent} from "../components/PlanetComponent";
+import {PeopleComponent} from "../components/PeopleComponent";
+import {StarshipsPage} from "../pages/StarshipsPage";
+import {VehiclesPage} from "../pages/VehiclesPage";
 
 
 let router = createBrowserRouter([

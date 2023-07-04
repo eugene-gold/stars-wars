@@ -1,6 +1,6 @@
 import {NavLink} from "react-router-dom";
 import {DarkLogo, LightLogo, NavWrapper} from "./styles";
-import { useTheme } from "themes/useTheme";
+import { useTheme } from "app/providers/ThemeProvider";
 
 export const Navigation = () => {
 

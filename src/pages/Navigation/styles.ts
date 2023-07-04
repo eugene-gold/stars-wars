@@ -1,6 +1,6 @@
 import styled from "@emotion/styled/macro";
-import { ReactComponent as navlogo } from "logo.svg";
-import { ReactComponent as mando } from "mando.svg";
+import { ReactComponent as navlogo } from "shared/assets/icons/logo.svg";
+import { ReactComponent as mando } from "shared/assets/icons/mando.svg";
 
 export const DarkLogo = styled(navlogo)`
   height: 3rem;
