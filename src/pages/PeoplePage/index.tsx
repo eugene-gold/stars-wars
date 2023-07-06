@@ -1,4 +1,4 @@
-import { InputWithLabel } from '../../components/Input/InputWithLabel';
+import { InputWithLabel } from 'widgets/Input/InputWithLabel';
 import {Loader} from "../../components/Loader";
 import {IndexWrapper, PeoplePageContainer, MenuPanel} from "./styles";
 import {PeopleDataType, PeopleStoreType} from "./types";
