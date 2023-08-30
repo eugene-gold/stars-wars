@@ -14,7 +14,7 @@ import {StarshipsPage} from "../pages/StarshipsPage";
 import {VehiclesPage} from "../pages/VehiclesPage";
 
 
-let router = createBrowserRouter([
+const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout/>,
@@ -58,9 +58,9 @@ let router = createBrowserRouter([
 
 
 function App() {
-  return (
-     <RouterProvider router={router} />
-  );
+    return (
+        <RouterProvider router={router} />
+    );
 }
 
 export default App;

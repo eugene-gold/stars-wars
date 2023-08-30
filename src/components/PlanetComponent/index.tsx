@@ -40,17 +40,17 @@ export const PlanetComponent: FC = () => {
             <p>Population: {planet?.population}</p>
             <p>Gravity: {planet?.gravity}</p>
             <div>Residents:
-            { peoplArr.length > 0 ?
-                peoplArr.map(man =>
-                    <div key={man.url}>
-                        <Link key={man.name} to={`/people/${man.name}`}><div>Name: {man.name}</div></Link>
-                        <div>Gender: {man.gender}</div>
-                        <div>Birth: {man.birth_year}</div>
-                        <div>Height: {man.height}</div>
-                        <div>Weight: {man.mass}</div>
-                    </div>
-                ) : <span> n/a</span>
-            }
+                { peoplArr.length > 0 ?
+                    peoplArr.map(man =>
+                        <div key={man.url}>
+                            <Link key={man.name} to={`/people/${man.name}`}><div>Name: {man.name}</div></Link>
+                            <div>Gender: {man.gender}</div>
+                            <div>Birth: {man.birth_year}</div>
+                            <div>Height: {man.height}</div>
+                            <div>Weight: {man.mass}</div>
+                        </div>
+                    ) : <span> n/a</span>
+                }
             </div>
         </PlanetWrapper>
     );

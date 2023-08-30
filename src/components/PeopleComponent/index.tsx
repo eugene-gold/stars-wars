@@ -12,7 +12,7 @@ export const PeopleComponent = () => {
 
     const home = usePlanetsStore.getState().data.find(planet => planet.url === person?.homeworld)
 
-    const films = getItemsArray(person?.films!, useFilmsStore.getState().data)
+    const films = getItemsArray(person?.films, useFilmsStore.getState().data)
 
 
     return (

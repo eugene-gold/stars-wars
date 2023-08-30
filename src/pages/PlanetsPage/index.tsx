@@ -1,6 +1,6 @@
 import React from 'react';
 import {PlanetDataType} from './types';
-import { Loader } from '../../components/Loader';
+import { Loader } from '../../shared/ui/Loader';
 import {PlanetsWrapper, PageName, PlanetElement} from "./styles";
 import {Link} from "react-router-dom";
 import {fetchDataWithPagination} from "../types";
@@ -11,28 +11,28 @@ export const Planets = () => {
         data,
         fetchData,
         fetchNextPageData } = usePlanetsStore<fetchDataWithPagination<PlanetDataType>>
-    ((state) =>
-        ({ isLoading: state.isLoading,
-            data: state.data,
-            fetchData: state.fetchData,
-            nextPage: state.nextPage,
-            fetchNextPageData: state.fetchNextPageData}))
+        ((state) =>
+            ({ isLoading: state.isLoading,
+                data: state.data,
+                fetchData: state.fetchData,
+                nextPage: state.nextPage,
+                fetchNextPageData: state.fetchNextPageData}))
 
     return (
         <div>
             {isLoading ? (
                 <Loader />
             ) : (
-                    <div>
-                        <PageName>STARS-WARS Planets:</PageName>
-                        <button onClick={fetchData}>Get 10 Planets</button>
-                        <button onClick={fetchNextPageData}>Get All Planets</button>
-                        <PlanetsWrapper>
-                            {data.map((planet: PlanetDataType) => (
-                                <PlanetElement key={planet.name}>
-                                    <Link to={`/planets/${planet.name}`}
-                                          state={{planet: planet}}
-                                    >
+                <div>
+                    <PageName>STARS-WARS Planets:</PageName>
+                    <button onClick={fetchData}>Get 10 Planets</button>
+                    <button onClick={fetchNextPageData}>Get All Planets</button>
+                    <PlanetsWrapper>
+                        {data.map((planet: PlanetDataType) => (
+                            <PlanetElement key={planet.name}>
+                                <Link to={`/planets/${planet.name}`}
+                                    state={{planet: planet}}
+                                >
                                     <h2>{planet.name}</h2>
                                     <div>
                                         <p>Climate : {planet.climate}</p>
@@ -40,11 +40,11 @@ export const Planets = () => {
                                         <p>Diameter: {planet.diameter}</p>
                                         <p>Terrain: {planet.terrain}</p>
                                     </div>
-                                    </Link>
-                                </PlanetElement>
-                            ))}
-                        </PlanetsWrapper>
-                    </div>
+                                </Link>
+                            </PlanetElement>
+                        ))}
+                    </PlanetsWrapper>
+                </div>
             )}
         </div>
     );

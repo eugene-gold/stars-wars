@@ -17,7 +17,7 @@ export const Preview = (props: Props<StarshipsDataType> | Props<VehiclesDataType
                 {props.props.map((ship: StarshipsDataType) => (
                     <Item key={ship.name}>
                         <Link to={`/planets/${ship.name}`}
-                              state={{planet: ship}}
+                            state={{planet: ship}}
                         >
                             <h2>{ship.name}</h2>
                             <div>

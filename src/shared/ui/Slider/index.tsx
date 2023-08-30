@@ -61,21 +61,21 @@ export const Slider: FC<SliderProps> = ({initial, max, onChange, formatFn = (num
         }
         document.addEventListener('mousemove', handleMouseMove);
         document.addEventListener('mouseup', handleMouseUp);
-      };
+    };
   
     return (
-      <>
-      <SliderHeader >
-        <strong ref={currentRef}>{formatFn(initial)}</strong>
+        <>
+            <SliderHeader >
+                <strong ref={currentRef}>{formatFn(initial)}</strong>
         &nbsp;/&nbsp;
-        {formatFn(max)}
-      </SliderHeader>
-        <StyledSlider ref={sliderRef}>
-          <StyledThumb ref={thumbRef}
-           onMouseDown={()=>handleMouseDown}
-           style={{ left: getLeft(initialPercentage) }}
-           />
-        </StyledSlider>
-      </>
+                {formatFn(max)}
+            </SliderHeader>
+            <StyledSlider ref={sliderRef}>
+                <StyledThumb ref={thumbRef}
+                    onMouseDown={()=>handleMouseDown}
+                    style={{ left: getLeft(initialPercentage) }}
+                />
+            </StyledSlider>
+        </>
     );
-  };
+};

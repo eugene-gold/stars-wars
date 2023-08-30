@@ -29,7 +29,7 @@ export const PeopleElement: FC<ItemType> = ({ item }) => {
         const dragObj = e.target as HTMLElement;
         dragObj.style.border = '2px solid lightgrey';
         dragObj.style.position = 'fixed';
-        let coords = mouseDragCoords (e)
+        const coords = mouseDragCoords (e)
         setDrag({x: coords.x, y: coords.y})
     }
 
@@ -43,17 +43,17 @@ export const PeopleElement: FC<ItemType> = ({ item }) => {
     }
 
     return (
-    <ElementWrapper
-        draggable={true}
-        onDragStart={(e)=> onDragStartHandler(e)}
-        onDragEnd={(e)=> onDragEndHandler(e)}
-        key={name}>
+        <ElementWrapper
+            draggable={true}
+            onDragStart={(e)=> onDragStartHandler(e)}
+            onDragEnd={(e)=> onDragEndHandler(e)}
+            key={name}>
 
-      <h2>{name}</h2>
-      {!name && <h2>No name</h2>}
-      <p>Birth: {birth_year}</p>
-      <p>HomeWorld: {home?.name}</p>
-      <p>Gender: {gender}</p>
-    </ElementWrapper>
-  );
+            <h2>{name}</h2>
+            {!name && <h2>No name</h2>}
+            <p>Birth: {birth_year}</p>
+            <p>HomeWorld: {home?.name}</p>
+            <p>Gender: {gender}</p>
+        </ElementWrapper>
+    );
 };

@@ -18,11 +18,11 @@ export const ErrorPage = () => {
     }
 
 
-  return (
-    <ErrorPageWrapper>
-      <h1>Oops!</h1>
-        <h2>An error has occurred</h2>
-        <i>{errorMessage}</i>
-    </ErrorPageWrapper>
-  );
+    return (
+        <ErrorPageWrapper>
+            <h1>Oops!</h1>
+            <h2>An error has occurred</h2>
+            <i>{errorMessage}</i>
+        </ErrorPageWrapper>
+    );
 };

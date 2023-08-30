@@ -19,9 +19,9 @@ export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
             className={classNames(cls.ThemeSwitcher, {}, [className] )}
             onClick={toggleTheme}
         >
-           {theme === Theme.DARK ? 
-           <DarkSide className={classNames(cls.svgblock, {}, [className])}/> 
-           : <LightSide className={classNames(cls.svgblock, {}, [className])}/>}
+            {theme === Theme.DARK ? 
+                <DarkSide className={classNames(cls.svgblock, {}, [className])}/> 
+                : <LightSide className={classNames(cls.svgblock, {}, [className])}/>}
         </Button>
     );
 };

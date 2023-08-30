@@ -7,16 +7,16 @@ import {useStarshipsStore} from "store/useStarshipsStore";
 import {useVehiclesStore} from "store/useVehiclesStore";
 import { Navbar } from "widgets/NavBar";
 
-usePeopleStore.getState().fetchData().then(r => r)
-usePlanetsStore.getState().fetchData().then(r => r)
-useFilmsStore.getState().fetchData().then(r => r)
-useStarshipsStore.getState().fetchData().then(r => r)
-useVehiclesStore.getState().fetchData().then(r => r)
+// usePeopleStore.getState().fetchData().then(r => r)
+// usePlanetsStore.getState().fetchData().then(r => r)
+// useFilmsStore.getState().fetchData().then(r => r)
+// useStarshipsStore.getState().fetchData().then(r => r)
+// useVehiclesStore.getState().fetchData().then(r => r)
 
 export const Layout = () => {
     return (
         <>
-            <Navbar/>
+            <Navbar className=""/>
             <MainWrapper>
                 <Outlet/>
             </MainWrapper>

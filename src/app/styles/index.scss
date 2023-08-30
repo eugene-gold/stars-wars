@@ -3,17 +3,10 @@
 @import "themes/light.scss" ;
 @import "themes/dark.scss" ;
 
-.nav {
-  font: var(--font-l);
-  background: var(--bg-color);
-  color: var(--primary-color);
-    
-}
-
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font: var(--font-m);
+  color: var(--primary-color);
+
 }
 
 

@@ -1,7 +1,23 @@
 .Navbar {
+    font: var(--font-l);
+    width: 100%;
+    display: flex;
+    height: var(--navbar-height);
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color);
+
+    a {
+        margin-right: 1rem;
+    }
     
  }
 
 .lang {
     font-size: 0.6rem; 
+}
+
+.enterBtn {
+    margin-left: 1rem;
 }

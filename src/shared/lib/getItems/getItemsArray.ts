@@ -1,6 +1,6 @@
 
 export const getItemsArray = (itemsArray: string[] | undefined, data: any[]) : any[]=> {
-    let arr: any[] = []
+    const arr: any[] = []
 
     if(itemsArray) {
         for(let i = 0; i < itemsArray?.length; i++) {
