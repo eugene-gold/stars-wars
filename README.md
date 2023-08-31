@@ -12,6 +12,7 @@ language: i18n
 
 look at:
 (Netlify)
-https://famous-meringue-a923fb.netlify.app/
+https://main--stars-wars-swapi-dev.netlify.app/
 
-new branch:
+new feature branch:
+https://64f0161a778491000836dca6--stars-wars-swapi-dev.netlify.app/
