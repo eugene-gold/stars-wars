@@ -14,7 +14,7 @@ export const useStarshipsStore = create<fetchDataWithPagination<StarshipsDataTyp
             const data = await response.json()
             console.log(data)
             set({data: data.results, nextPage: data.next})
-        } catch (e : any) {
+        } catch (e) {
             console.log(e)
         }
         finally {
@@ -27,7 +27,7 @@ export const useStarshipsStore = create<fetchDataWithPagination<StarshipsDataTyp
         if(next) {
             try {
                 await get().fetchNextPageData()
-            } catch (e : any) {
+            } catch (e) {
                 console.log(e)
             }
         }

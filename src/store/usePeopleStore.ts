@@ -13,8 +13,10 @@ export const usePeopleStore = create<PeopleStoreType<PeopleDataType>>((set, get)
             const response = await fetch('https://swapi.dev/api/people')
             const data = await response.json()
             set({ data: data.results, error: null, nextPage: data.next, prevPage: data.previous })
-        } catch (error: any) {
-            set({ error: error.message })
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                set({ error: error.message })
+            }
         } finally {
             set({ isLoading: false })
         }
@@ -25,7 +27,7 @@ export const usePeopleStore = create<PeopleStoreType<PeopleDataType>>((set, get)
             try {
                 await get().fetchNextPageData()
 
-            } catch (e : any) {
+            } catch (e) {
                 console.log(e)
             }
         }
@@ -55,8 +57,9 @@ export const usePeopleStore = create<PeopleStoreType<PeopleDataType>>((set, get)
                 const data = await response.json()
                 set({ data: data.results, error: null, nextPage: data.next, prevPage: data.previous })
             }
-        } catch (error: any) {
-            set({ error: error.message })
+        } catch (error: unknown) {
+            if(error instanceof Error)
+                set({ error: error.message })
         } finally {
             set({ isLoading: false })
         }

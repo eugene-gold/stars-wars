@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
 import {MainWrapper} from "./styles";
-import {usePeopleStore} from "store/usePeopleStore";
-import {usePlanetsStore} from "store/usePlanetsStore";
-import {useFilmsStore} from "store/useFilmsStore";
-import {useStarshipsStore} from "store/useStarshipsStore";
-import {useVehiclesStore} from "store/useVehiclesStore";
+// import {usePeopleStore} from "store/usePeopleStore";
+// import {usePlanetsStore} from "store/usePlanetsStore";
+// import {useFilmsStore} from "store/useFilmsStore";
+// import {useStarshipsStore} from "store/useStarshipsStore";
+// import {useVehiclesStore} from "store/useVehiclesStore";
 import { Navbar } from "widgets/NavBar";
 
 // usePeopleStore.getState().fetchData().then(r => r)

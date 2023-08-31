@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 export const getItemsArray = (itemsArray: string[] | undefined, data: any[]) : any[]=> {
     const arr: any[] = []

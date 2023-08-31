@@ -11,7 +11,7 @@ export const useFilmsStore = create<fetchDataType<FilmDataType>>((set)=>({
             const response = await fetch ('https://swapi.dev/api/films')
             const data = await response.json()
             set({data: data.results})
-        } catch (e : any) {
+        } catch (e) {
             console.log(e)
         }
         finally {
